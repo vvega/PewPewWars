@@ -151,9 +151,14 @@ public class TwitchIRC : MonoBehaviour {
                     }
                     break;
 
-                case "MODE":
-                    GetChatUserByName(ircData[4]).isOperator = (ircData[3] == "+o");
-                    OnUserOperatorChange.Invoke(ircData[4]);
+				case "MODE": {
+						ChatUser user = GetChatUserByName(ircData[4]);
+						if (user != null) {
+								user.isOperator = (ircData[3] == "+o");
+						}
+	                    OnUserOperatorChange.Invoke(ircData[4]);
+					}
+
                     break;
 
                 case "JOIN": { 
