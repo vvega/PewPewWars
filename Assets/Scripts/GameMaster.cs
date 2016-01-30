@@ -9,7 +9,7 @@ public class GameMaster : MonoBehaviour {
     [Header("Templates")]
     public GameObject playerTemplate;
 
-    private Dictionary<string, GameObject> userObjectDict = new Dictionary<string, GameObject>();
+    public Dictionary<string, GameObject> userObjectDict = new Dictionary<string, GameObject>();
     private Dictionary<string, ChatCommand> chatCommandDict = new Dictionary<string, ChatCommand>();
 	private Dictionary<string, Spell> spellDict = new Dictionary<string, Spell>();
 
@@ -19,10 +19,11 @@ public class GameMaster : MonoBehaviour {
 
 		GameObject newUser = Instantiate(playerTemplate);
 		Player player = newUser.GetComponent<Player>();
+		player.username = username;
         player.setTeam(newPlayerTeam);
 
-		//Player newUser = new Player(username, newPlayerTeam);
         newUser.transform.FindChild("Username").GetComponent<TextMesh>().text = username;
+		newPlayerTeam.PlaceMember(newUser);
 
         userObjectDict.Add(username, newUser);
     }
@@ -31,7 +32,8 @@ public class GameMaster : MonoBehaviour {
         if (userObjectDict.ContainsKey(username) == false)
             return;
 
-		//userObjectDict[username].GetTeam().RemoveMember(username);
+		Player player = userObjectDict[username].GetComponent<Player>();
+		player.getTeam().RemoveMember(username);
 
         Destroy(userObjectDict[username]);
         userObjectDict.Remove(username);
