@@ -1,19 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class Team {
+public class Team : MonoBehaviour {
+	public List<string> members = new List<string>();
+    public int startingHealth;
+	private int healthLeft;
 
-	private Dictionary<string, GameObject> members = new Dictionary<string, GameObject>();
-	private GameObject castle;
-	private int health;
-
-	public Team(GameObject castle, int health) {
-		castle = castle;
-		health = health;
-	}
+	void Start()
+    {
+        healthLeft = startingHealth;
+    }
 
 	public void AddMember(string username, GameObject newMember) {
-		members.Add(username, newMember);
+		members.Add(username);
 		//newMember.SetTeam(this);
 		AddToBoard(newMember);
 	}
@@ -21,14 +20,6 @@ public class Team {
 	public void RemoveMember(string username) {
 		//TODO: dead bod slingshot
 		members.Remove(username);
-	}
-
-	public int GetNumMembers() {
-		return members.Count;
-	}
-
-	public Dictionary<string, GameObject> getMembers() {
-		return members;
 	}
 
 	private void AddToBoard(GameObject newMember) {

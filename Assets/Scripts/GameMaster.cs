@@ -2,28 +2,24 @@
 using System.Collections.Generic;
 
 public class GameMaster : MonoBehaviour {
+    [Header("References")]
+    public Team redTeam;
+    public Team blueTeam;
+
     [Header("Templates")]
     public GameObject playerTemplate;
 
     private Dictionary<string, GameObject> userObjectDict = new Dictionary<string, GameObject>();
     private Dictionary<string, ChatCommand> chatCommandDict = new Dictionary<string, ChatCommand>();
 	private Dictionary<string, Spell> spellDict = new Dictionary<string, Spell>();
-	private Team red;
-	private Team blue;
 
     public void OnUserJoin(string username) {
 
-		Team newPlayerTeam;
+        Team newPlayerTeam = (redTeam.members.Count > blueTeam.members.Count ? blueTeam : redTeam);
 
-		if(red.GetNumMembers() > blue.GetNumMembers()) {
-			newPlayerTeam = blue;
-		} else {
-			newPlayerTeam = red;
-		}
-
-		//GameObject newUser = Instantiate(playerTemplate, username, newPlayerTeam);
 		GameObject newUser = Instantiate(playerTemplate);
-		//Player player = newUser.GetComponent<Player>();
+		Player player = newUser.GetComponent<Player>();
+        player.setTeam(newPlayerTeam);
 
 		//Player newUser = new Player(username, newPlayerTeam);
         newUser.transform.FindChild("Username").GetComponent<TextMesh>().text = username;
@@ -64,8 +60,7 @@ public class GameMaster : MonoBehaviour {
 
     void Start() {
         ChatCommand[] commands = GetComponents<ChatCommand>();
-		red = new Team (new GameObject(), 100);
-		blue = new Team(new GameObject(), 100);
+
         foreach (ChatCommand command in commands) {
             chatCommandDict[command.Command] = command;
         }

@@ -26,6 +26,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 431490}
   - 212: {fileID: 21250302}
+  - 114: {fileID: 11422152}
   m_Layer: 0
   m_Name: Wizard
   m_TagString: Untagged
@@ -105,6 +106,18 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
+--- !u!114 &11422152
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 128354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e12fd21f2244641a4b3fc5b4f7279916, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: {fileID: 0}
 --- !u!212 &21250302
 SpriteRenderer:
   m_ObjectHideFlags: 1

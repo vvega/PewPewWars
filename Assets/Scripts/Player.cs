@@ -14,7 +14,7 @@ public class Player : MonoBehaviour {
 	}
 
 	public void setTeam(Team team) {
-		team = team;
+		this.team = team;
 	}
 
 	public Team getTeam() {
