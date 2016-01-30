@@ -11,7 +11,6 @@ public class GameMaster : MonoBehaviour {
 
     public Dictionary<string, GameObject> userObjectDict = new Dictionary<string, GameObject>();
     private Dictionary<string, ChatCommand> chatCommandDict = new Dictionary<string, ChatCommand>();
-	private Dictionary<string, Spell> spellDict = new Dictionary<string, Spell>();
 
     public void OnUserJoin(string username) {
 
@@ -71,10 +70,5 @@ public class GameMaster : MonoBehaviour {
         foreach (ChatCommand command in commands) {
             chatCommandDict[command.Command] = command;
         }
-
-		Spell[] spells = GetComponents<Spell>();
-		foreach (Spell spell in spells) {
-			spellDict[spell.spellName] = spell;
-		}
     }
 }

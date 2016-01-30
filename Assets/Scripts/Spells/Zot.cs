@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 
-public class Zot : Spell {
+public class Zot : ChatCommand {
     public float timeVisible;
+    public int damage;
 
     [Header("Templates")]
     public GameObject zotTemplate;

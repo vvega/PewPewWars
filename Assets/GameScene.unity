@@ -168,6 +168,8 @@ GameObject:
   - 114: {fileID: 1275180019}
   - 114: {fileID: 1275180021}
   - 114: {fileID: 1275180022}
+  - 114: {fileID: 1275180024}
+  - 114: {fileID: 1275180023}
   m_Layer: 0
   m_Name: Chat Reader
   m_TagString: Untagged
@@ -284,15 +286,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Command: '!zot'
-  lines:
-  - words: zot
-    playerConstraint: -1
-  casterNames:
-  - 
-  spellName: zot
-  damage: 1
   timeVisible: 0.25
+  damage: 1
   zotTemplate: {fileID: 191894, guid: bdaff6888f597fd4c97b548221a80a7c, type: 2}
+--- !u!114 &1275180023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1275180018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10f69ec6937e249fdb678ed6ec7775f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spellName: Fireball
+  damage: 10
+  timeToCast: 0
+  lines:
+  - words: one
+    playerConstraint: -1
+  - words: two
+    playerConstraint: -1
+  - words: Fireball!
+    playerConstraint: -1
+--- !u!114 &1275180024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1275180018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b189c9ddbeab49caa56221b7c0bdcc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Command: '!incant'
+  inProgressSpells: []
 --- !u!1 &1582897485
 GameObject:
   m_ObjectHideFlags: 0
