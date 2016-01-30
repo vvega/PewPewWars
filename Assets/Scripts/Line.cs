@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Line : MonoBehaviour {
+public class Line {
 	// what they actually have to type
 	public string words;
 

@@ -53,7 +53,7 @@ public class GameMaster : MonoBehaviour {
 
 		Spell[] spells = GetComponents<Spell>();
 		foreach (Spell spell in spells) {
-			spellDict[spell.name] = spell;
+			spellDict[spell.spellName] = spell;
 		}
     }
 }
