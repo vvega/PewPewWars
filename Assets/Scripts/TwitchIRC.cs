@@ -183,7 +183,11 @@ public class TwitchIRC : MonoBehaviour {
                             OnUserJoinChannel.Invoke(message_sender);
                         }
 
-                        OnPrivateMessage.Invoke(message_sender, ircData[3].Substring(1));
+                        string message = ircData[3].Substring(1);
+                        for (int i = 4; i < ircData.Length; ++i)
+                            message += " " + ircData[i];
+
+                        OnPrivateMessage.Invoke(message_sender, message);
                     }
                     
                     break;

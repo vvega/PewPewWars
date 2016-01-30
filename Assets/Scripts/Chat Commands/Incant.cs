@@ -2,9 +2,8 @@
 using System.Collections;
 
 public class Incant : ChatCommand {
-	
+
 	void Start () {
-		this.Command = "cast";
 	}
 	
 	public override void ProcessCommand(GameMaster gameMaster, string username, string parameters)

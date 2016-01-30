@@ -45,7 +45,7 @@ public class GameMaster : MonoBehaviour {
 
         int paramStartIdx = message.IndexOf(' ');
         string command = message.Substring(0, (paramStartIdx >= 0 ? paramStartIdx : message.Length));
-        string parameters = (paramStartIdx >= 0 ? message.Substring(command.Length) : "");
+        string parameters = (paramStartIdx >= 0 ? message.Substring(command.Length).Trim() : "");
 
         if (chatCommandDict.ContainsKey(command) == false)
             return;
@@ -58,6 +58,11 @@ public class GameMaster : MonoBehaviour {
             return null;
 
         return userObjectDict[username];
+    }
+
+    public Team GetOpposingTeam(Team t)
+    {
+        return (t == redTeam ? blueTeam : redTeam);
     }
 
     void Start() {

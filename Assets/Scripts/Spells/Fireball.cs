@@ -14,8 +14,4 @@ public class Fireball : Spell {
 		lines[2] = new Line("FIREBALL!");
 		this.casterNames = new string[numLines];
 	}
-	
-	public override void Cast() {
-		// TODO: deal damage
-	}
 }

@@ -280,11 +280,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1275180018}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8895f5e50f8fbbf4db566b1b300d2678, type: 3}
+  m_Script: {fileID: 11500000, guid: 4be58b8ac34106047a18c02b289b563f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Command: 
-  Description: 
+  Command: '!zot'
+  lines:
+  - words: zot
+    playerConstraint: -1
+  casterNames:
+  - 
+  spellName: zot
+  damage: 1
+  timeVisible: 0.25
+  zotTemplate: {fileID: 191894, guid: bdaff6888f597fd4c97b548221a80a7c, type: 2}
 --- !u!1 &1582897485
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
-
+﻿[System.Serializable]
 public class Line {
 	// what they actually have to type
 	public string words;

@@ -26,4 +26,17 @@ public class Team : MonoBehaviour {
 		//TODO: dead bod slingshot
 		members.Remove(username);
 	}
+
+	private void AddToBoard(GameObject newMember) {
+		//TODO: position player on board
+	}
+
+    public void DealDamage(int damage)
+    {
+        healthLeft = Mathf.Max(healthLeft - damage, 0);
+        if (healthLeft == 0)
+        {
+            // TODO: This team LOSES, other team WINS
+        }
+    }
 }

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public abstract class Spell : MonoBehaviour {
+public abstract class Spell : ChatCommand {
 	public Line[] lines;
 	public string[] casterNames;
 
@@ -28,10 +28,6 @@ public abstract class Spell : MonoBehaviour {
 	}
 
 	public bool IsReady() {
-		return casterNames.Length.Equals(lines.Length);
+		return casterNames.Length == lines.Length;
 	}
-
-	// implementations need to reset progress
-	// TODO: take in both teams as arguments, so the spells can apply their own effects
-	public abstract void Cast();
 }
