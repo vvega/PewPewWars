@@ -3,17 +3,16 @@ using System.Collections.Generic;
 
 public class GameMaster : MonoBehaviour {
     [Header("Templates")]
-    public GameObject playerObject;
+    public GameObject playerTemplate;
 
     private Dictionary<string, GameObject> userObjectDict = new Dictionary<string, GameObject>();
     private Dictionary<string, ChatCommand> chatCommandDict = new Dictionary<string, ChatCommand>();
 
     public void OnUserJoin(string username) {
-        GameObject newPlayerObj = Instantiate(playerObject);
-        newPlayerObj.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Random.Range(0, Screen.width), Random.Range(0, Screen.height), 10));
-        newPlayerObj.transform.FindChild("Username").GetComponent<TextMesh>().text = username;
+        GameObject newUser = Instantiate(playerTemplate);
+        newUser.transform.FindChild("Username").GetComponent<TextMesh>().text = username;
 
-        userObjectDict[username] = newPlayerObj;
+        userObjectDict.Add(username, newUser);
     }
 
     public void OnUserQuit(string username) {

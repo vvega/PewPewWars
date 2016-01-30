@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1275180020}
   - 114: {fileID: 1275180019}
+  - 114: {fileID: 1275180021}
   m_Layer: 0
   m_Name: Chat Reader
   m_TagString: Untagged
@@ -124,11 +125,33 @@ MonoBehaviour:
       PublicKeyToken=null
   OnUserJoinChannel:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1275180021}
+        m_MethodName: OnUserJoin
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UserEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   OnUserLeaveChannel:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1275180021}
+        m_MethodName: OnUserQuit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UserEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   OnUserOperatorChange:
     m_PersistentCalls:
@@ -136,7 +159,18 @@ MonoBehaviour:
     m_TypeName: UserEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   OnPrivateMessage:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1275180021}
+        m_MethodName: OnPrivateMessage
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UserMessageEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
 --- !u!4 &1275180020
@@ -151,6 +185,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!114 &1275180021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1275180018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a53f4d80a5844134c95adbe1b8700907, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTemplate: {fileID: 128354, guid: 2e77544eb8441e14d99fcb79c67d695c, type: 2}
 --- !u!1 &2021787503
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,7 +257,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 1
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
