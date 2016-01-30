@@ -8,9 +8,24 @@ public class GameMaster : MonoBehaviour {
     private Dictionary<string, GameObject> userObjectDict = new Dictionary<string, GameObject>();
     private Dictionary<string, ChatCommand> chatCommandDict = new Dictionary<string, ChatCommand>();
 	private Dictionary<string, Spell> spellDict = new Dictionary<string, Spell>();
+	private Team red;
+	private Team blue;
 
     public void OnUserJoin(string username) {
-        GameObject newUser = Instantiate(playerTemplate);
+
+		Team newPlayerTeam;
+
+		if(red.GetNumMembers() > blue.GetNumMembers()) {
+			newPlayerTeam = blue;
+		} else {
+			newPlayerTeam = red;
+		}
+
+		//GameObject newUser = Instantiate(playerTemplate, username, newPlayerTeam);
+		GameObject newUser = Instantiate(playerTemplate);
+		//Player player = newUser.GetComponent<Player>();
+
+		//Player newUser = new Player(username, newPlayerTeam);
         newUser.transform.FindChild("Username").GetComponent<TextMesh>().text = username;
 
         userObjectDict.Add(username, newUser);
@@ -19,6 +34,8 @@ public class GameMaster : MonoBehaviour {
     public void OnUserQuit(string username) {
         if (userObjectDict.ContainsKey(username) == false)
             return;
+
+		//userObjectDict[username].GetTeam().RemoveMember(username);
 
         Destroy(userObjectDict[username]);
         userObjectDict.Remove(username);
@@ -47,6 +64,8 @@ public class GameMaster : MonoBehaviour {
 
     void Start() {
         ChatCommand[] commands = GetComponents<ChatCommand>();
+		red = new Team (new GameObject(), 100);
+		blue = new Team(new GameObject(), 100);
         foreach (ChatCommand command in commands) {
             chatCommandDict[command.Command] = command;
         }
