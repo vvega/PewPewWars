@@ -2,15 +2,21 @@
 using System.Collections.Generic;
 
 public class Team : MonoBehaviour {
+    [Header("Params")]
     public int startingHealth;
     public int healthLeft;
 
+    [Header("References")]
     public Transform spawnPoint;
+    public HealthBar healthBar;
+
     public List<string> members = new List<string>();
 	public List<SpellProgress> inProgressSpells = new List<SpellProgress>();
-	public HealthBar healthBar;
 
-	void Start()
+    [Header("Templates")]
+    public GameObject halfExplosionTemplate;
+
+    void Start()
     {
         healthLeft = startingHealth;
     }
@@ -37,8 +43,17 @@ public class Team : MonoBehaviour {
 	}
 
     public void TakeDamage(int damage) {
+        float prevHealthPercentage = (float)healthLeft / (float)startingHealth;
+
         healthLeft = Mathf.Max(healthLeft - damage, 0);
 		healthBar.updatePercentage(healthLeft, startingHealth);
+
+        float newHealthPercentage = (float)healthLeft / (float)startingHealth;
+        if (prevHealthPercentage > 0.5f && newHealthPercentage <= 0.5f)
+        {
+            Instantiate(halfExplosionTemplate);
+        }
+
         if (healthLeft == 0) {
             // TODO: This team LOSES, other team WINS
 			healthBar.reset();

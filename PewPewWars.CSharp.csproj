@@ -62,15 +62,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DestroyOnAnimComplete.cs" />
     <Compile Include="Assets\Scripts\Chat Commands\Incant.cs" />
     <Compile Include="Assets\Scripts\Chat Commands\NewPosition.cs" />
     <Compile Include="Assets\Scripts\ChatCommand.cs" />
     <Compile Include="Assets\Scripts\Dead.cs" />
     <Compile Include="Assets\Scripts\GameMaster.cs" />
+    <Compile Include="Assets\Scripts\HealthBar.cs" />
     <Compile Include="Assets\Scripts\Line.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\Spell.cs" />
     <Compile Include="Assets\Scripts\SpellProgress.cs" />
+    <Compile Include="Assets\Scripts\Spells\AcidCone.cs" />
+    <Compile Include="Assets\Scripts\Spells\BloodMagic.cs" />
+    <Compile Include="Assets\Scripts\Spells\Drain.cs" />
     <Compile Include="Assets\Scripts\Spells\Fireball.cs" />
     <Compile Include="Assets\Scripts\Spells\MagicMissile.cs" />
     <Compile Include="Assets\Scripts\Spells\Zot.cs" />

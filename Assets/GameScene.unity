@@ -315,9 +315,11 @@ MonoBehaviour:
   startingHealth: 30
   healthLeft: 0
   spawnPoint: {fileID: 156124369}
+  healthBar: {fileID: 1840863683}
   members: []
   inProgressSpells: []
-  healthBar: {fileID: 1840863683}
+  halfExplosionTemplate: {fileID: 108636, guid: b84ed8002ba43ef458eb2f4c69570d5a,
+    type: 2}
 --- !u!1 &914785963
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,9 +739,11 @@ MonoBehaviour:
   startingHealth: 30
   healthLeft: 0
   spawnPoint: {fileID: 1988317449}
+  healthBar: {fileID: 1997741949}
   members: []
   inProgressSpells: []
-  healthBar: {fileID: 1997741949}
+  halfExplosionTemplate: {fileID: 108636, guid: b84ed8002ba43ef458eb2f4c69570d5a,
+    type: 2}
 --- !u!1 &1840863679
 GameObject:
   m_ObjectHideFlags: 0
