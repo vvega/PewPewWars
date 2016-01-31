@@ -7,6 +7,8 @@ public class SpellSling : MonoBehaviour {
 	public GameObject target;
 
 	void Update () {
+		gameObject.GetComponent<SpriteRenderer>().flipX = (target.transform.position.x > transform.position.x);
+
 		float step = speed * Time.deltaTime;
 		transform.position = Vector2.MoveTowards(transform.position, target.transform.position, step);
 		if (transform.position == target.transform.position) {

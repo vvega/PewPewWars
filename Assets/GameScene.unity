@@ -600,7 +600,7 @@ MonoBehaviour:
   - words: magic missile!
     playerConstraint: -1
   timeVisible: 0.25
-  magicMissileTemplate: {fileID: 169360, guid: 4a32be679b5c38742973451362bd7e99, type: 2}
+  castTemplate: {fileID: 169360, guid: 4a32be679b5c38742973451362bd7e99, type: 2}
 --- !u!114 &1275180026
 MonoBehaviour:
   m_ObjectHideFlags: 0
