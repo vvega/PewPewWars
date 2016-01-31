@@ -206,6 +206,14 @@ Prefab:
       propertyPath: death.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: a550d5c8a51cde84fa47f4c95c7ea2e4, type: 3}
+    - target: {fileID: 0}
+      propertyPath: death.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: bbfd1fb0b6ca8b740b3eb1a185451ef5, type: 3}
+    - target: {fileID: 0}
+      propertyPath: death.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: c1266c2c25362cd4dbfcc83674362af5, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 128354}

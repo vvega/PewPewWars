@@ -569,6 +569,7 @@ MonoBehaviour:
     playerConstraint: -1
   - words: Fireball!
     playerConstraint: -1
+  castTemplate: {fileID: 195728, guid: 596ee71a18c034d4c84d6d6eff47fdfe, type: 2}
 --- !u!114 &1275180024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -598,6 +599,8 @@ MonoBehaviour:
   lines:
   - words: magic missile!
     playerConstraint: -1
+  timeVisible: 0.25
+  magicMissileTemplate: {fileID: 169360, guid: 4a32be679b5c38742973451362bd7e99, type: 2}
 --- !u!114 &1275180026
 MonoBehaviour:
   m_ObjectHideFlags: 0
