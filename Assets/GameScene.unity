@@ -901,6 +901,7 @@ MonoBehaviour:
     playerConstraint: -1
   - words: your blood
     playerConstraint: -1
+  castTemplate: {fileID: 192398, guid: 20522b1bcd2942a4da54d6e3d3674081, type: 2}
 --- !u!114 &1275180029
 MonoBehaviour:
   m_ObjectHideFlags: 0
