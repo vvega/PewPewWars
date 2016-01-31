@@ -1,39 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-[System.Serializable]
-public class SpellProgress {
-    public Spell spell;
-    public string[] casterNames;
-    public int currentLine = 1;
-    public float timeLeft;
-
-    public SpellProgress(Spell s, string c)
-    {
-        spell = s;
-        casterNames = new string[spell.lines.Length];
-        casterNames[0] = c;
-    }
-
-    public bool IsNextLine(string words)
-    {
-        return (spell.lines[currentLine].words == words);
-    }
-
-    public void IncrementSpellLine(string username)
-    {
-        casterNames[currentLine] = username;
-        currentLine++;
-    }
-
-    public bool SpellComplete()
-    {
-        return (currentLine >= spell.lines.Length);
-    }
-}
-
 public class Incant : ChatCommand {
-    public List<SpellProgress> inProgressSpells = new List<SpellProgress>();
 
     public override void ProcessCommand(GameMaster gameMaster, string username, string parameters)
 	{
@@ -41,10 +9,13 @@ public class Incant : ChatCommand {
 		if (playerObj == null)
 			return;
 
+		Player playerComponent = playerObj.GetComponent<Player>();
+		Team team = playerComponent.getTeam();
+
         // Check in-progress spells
-        for (int i = 0; i < inProgressSpells.Count; ++i)
+        for (int i = 0; i < team.inProgressSpells.Count; ++i)
         {
-            SpellProgress s = inProgressSpells[i];
+            SpellProgress s = team.inProgressSpells[i];
             if (s.IsNextLine(parameters) == false)
                 continue;
 
@@ -52,7 +23,7 @@ public class Incant : ChatCommand {
             if (s.SpellComplete())
             {
                 s.spell.Cast();
-                inProgressSpells.Remove(s);
+                team.inProgressSpells.Remove(s);
             }
 
             return;
@@ -65,7 +36,7 @@ public class Incant : ChatCommand {
             if (s.lines[0].words != parameters)
                 continue;
 
-            inProgressSpells.Add(new SpellProgress(s, username));
+            team.inProgressSpells.Add(new SpellProgress(s, username));
             break;
         }
 	}

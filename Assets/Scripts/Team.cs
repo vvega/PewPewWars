@@ -7,6 +7,7 @@ public class Team : MonoBehaviour {
 
     public Transform spawnPoint;
     public List<string> members = new List<string>();
+	public List<SpellProgress> inProgressSpells = new List<SpellProgress>();
 
 	void Start()
     {
