@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class Team : MonoBehaviour {
     public int startingHealth;
-    private int healthLeft;
+    public int healthLeft;
 
     public Transform spawnPoint;
     public List<string> members = new List<string>();
@@ -35,11 +35,9 @@ public class Team : MonoBehaviour {
 		//TODO: position player on board
 	}
 
-    public void DealDamage(int damage)
-    {
+    public void TakeDamage(int damage) {
         healthLeft = Mathf.Max(healthLeft - damage, 0);
-        if (healthLeft == 0)
-        {
+        if (healthLeft == 0) {
             // TODO: This team LOSES, other team WINS
         }
     }
