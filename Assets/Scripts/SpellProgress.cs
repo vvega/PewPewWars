@@ -20,10 +20,18 @@ public class SpellProgress {
 		return (spell.lines[currentLine].words == words);
 	}
 
-	public void IncrementSpellLine(string username)
+	public bool IncrementSpellLine(string username, string words)
 	{
-		casterNames[currentLine] = username;
-		currentLine++;
+		Line line = spell.lines[currentLine];
+		if (line.words == words) {
+			if ((line.HasConstraint() && casterNames[line.playerConstraint] == username)
+				|| (!line.HasConstraint() && casterNames[currentLine-1] != username)) {
+					casterNames[currentLine] = username;
+					currentLine++;
+					return true;
+			}
+		}
+		return false;
 	}
 
 	public bool SpellComplete()

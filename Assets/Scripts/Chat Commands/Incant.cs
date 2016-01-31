@@ -16,12 +16,10 @@ public class Incant : ChatCommand {
         for (int i = 0; i < team.inProgressSpells.Count; ++i)
         {
             SpellProgress s = team.inProgressSpells[i];
-            if (s.IsNextLine(parameters) == false)
-                continue;
-
-            s.IncrementSpellLine(username);
-            if (s.SpellComplete())
-            {
+			if (!s.IncrementSpellLine(username, parameters))
+				continue;
+			
+            if (s.SpellComplete()) {
                 s.spell.Cast();
                 team.inProgressSpells.Remove(s);
             }
@@ -36,7 +34,15 @@ public class Incant : ChatCommand {
             if (s.lines[0].words != parameters)
                 continue;
 
-            team.inProgressSpells.Add(new SpellProgress(s, username));
+			SpellProgress newSpellProgress = new SpellProgress(s, username);
+
+			// in case of one-liners:
+			if (newSpellProgress.SpellComplete()) {
+				newSpellProgress.spell.Cast();
+			} else {
+            	team.inProgressSpells.Add(newSpellProgress);
+			}
+
             break;
         }
 	}
