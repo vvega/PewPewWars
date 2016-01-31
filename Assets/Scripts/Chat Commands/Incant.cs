@@ -20,7 +20,7 @@ public class Incant : ChatCommand {
 				continue;
 			
             if (s.SpellComplete()) {
-                s.spell.Cast();
+				s.spell.Cast(team, gameMaster.GetOpposingTeam(team));
                 team.inProgressSpells.Remove(s);
             }
 
@@ -38,7 +38,7 @@ public class Incant : ChatCommand {
 
 			// in case of one-liners:
 			if (newSpellProgress.SpellComplete()) {
-				newSpellProgress.spell.Cast();
+				newSpellProgress.spell.Cast(team, gameMaster.GetOpposingTeam(team));
 			} else {
             	team.inProgressSpells.Add(newSpellProgress);
 			}

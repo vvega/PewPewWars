@@ -7,5 +7,5 @@ public abstract class Spell : MonoBehaviour {
 
     public Line[] lines;
 
-    public abstract void Cast();
+	public abstract void Cast(Team myTeam, Team enemyTeam);
 }
