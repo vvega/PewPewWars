@@ -12,6 +12,9 @@ public class Player : MonoBehaviour {
     public Vector3 targetLocation;
     private int remainingHealth;
 
+    [Header("Templates")]
+    public GameObject deadTemplate;
+
     // Use this for initialization
     void Start () {
         remainingHealth = startingHealth;
@@ -22,11 +25,26 @@ public class Player : MonoBehaviour {
         remainingHealth = Mathf.Max(remainingHealth - damage, 0);
         if (remainingHealth == 0)
         {
-            // TODO: Temporarily kill character
+            Die();
         }
     }
 
-	public void setTeam(Team team) {
+    [ContextMenu("Die")]
+    void Die()
+    {
+        gameObject.SetActive(false);
+
+        Instantiate(deadTemplate).transform.position = transform.position;
+        Invoke("Respawn", 10.0f);
+    }
+
+    void Respawn()
+    {
+        gameObject.SetActive(true);
+        transform.position = team.spawnPoint.position;
+    }
+
+    public void setTeam(Team team) {
 		this.team = team;
 		team.AddMember(username);
 	}
@@ -37,22 +55,21 @@ public class Player : MonoBehaviour {
 
     void Update()
     {
-        int currentDirection = GetWalkDirection();
         if (Vector3.Distance(transform.position, targetLocation) > 0.001f)
         {
             Vector3 direction = (targetLocation - transform.position).normalized;
             transform.position += direction * Time.deltaTime * walkSpeed;
 
-            if (currentDirection != 1 && direction.y < 0)
+            if (direction.y < 0)
                 SetWalkDirection(1);
-            else if (currentDirection != 2 && direction.x > 0)
+            else if (direction.x > 0)
                 SetWalkDirection(2);
-            else if (currentDirection != 3 && direction.y > 0)
+            else if (direction.y > 0)
                 SetWalkDirection(3);
             else
                 SetWalkDirection(4);
         }
-        else if (currentDirection != 0)
+        else
         {
             SetWalkDirection(0);
         }

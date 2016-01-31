@@ -136,10 +136,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 3
+  walkSpeed: 0.1
   username: 
   team: {fileID: 0}
-  walkSpeed: 0.1
   targetLocation: {x: 0, y: 0, z: 0}
+  deadTemplate: {fileID: 154598, guid: 5e60ecfa1324b7e4a9c04db725c12c6e, type: 2}
 --- !u!212 &21250302
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -189,6 +190,10 @@ Prefab:
       propertyPath: walkSpeed
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: deadTemplate
+      value: 
+      objectReference: {fileID: 154598, guid: 5e60ecfa1324b7e4a9c04db725c12c6e, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 128354}

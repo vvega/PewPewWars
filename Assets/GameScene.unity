@@ -186,6 +186,7 @@ MonoBehaviour:
   startingHealth: 100
   spawnPoint: {fileID: 156124369}
   members: []
+  inProgressSpells: []
 --- !u!1 &1275180018
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,7 +352,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Command: '!cast'
-  inProgressSpells: []
 --- !u!1 &1582897485
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,6 +426,7 @@ MonoBehaviour:
   startingHealth: 100
   spawnPoint: {fileID: 1988317449}
   members: []
+  inProgressSpells: []
 --- !u!1 &1988317448
 GameObject:
   m_ObjectHideFlags: 0
