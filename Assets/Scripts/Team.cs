@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class Team : MonoBehaviour {
@@ -12,6 +13,8 @@ public class Team : MonoBehaviour {
 
     public List<string> members = new List<string>();
 	public List<SpellProgress> inProgressSpells = new List<SpellProgress>();
+	public int otherTeamNumWins;
+	public Text otherTeamWinLabel;
 
     [Header("Templates")]
     public GameObject halfExplosionTemplate;
@@ -56,6 +59,8 @@ public class Team : MonoBehaviour {
 
         if (healthLeft == 0) {
             // TODO: This team LOSES, other team WINS
+			otherTeamNumWins++;
+			otherTeamWinLabel.text = otherTeamNumWins + " " + (otherTeamNumWins == 1 ? "win" : "wins");
 			healthBar.reset();
         }
     }
