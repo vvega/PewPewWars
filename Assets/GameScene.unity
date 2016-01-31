@@ -184,6 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 100
+  healthLeft: 0
   spawnPoint: {fileID: 156124369}
   members: []
   inProgressSpells: []
@@ -200,6 +201,7 @@ GameObject:
   - 114: {fileID: 1275180022}
   - 114: {fileID: 1275180024}
   - 114: {fileID: 1275180023}
+  - 114: {fileID: 1275180025}
   m_Layer: 0
   m_Name: Chat Reader
   m_TagString: Untagged
@@ -352,6 +354,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Command: '!cast'
+--- !u!114 &1275180025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1275180018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bde3781238e8e9246bde581d4be8d72c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spellName: MagicMissile
+  damage: 1
+  timeToCast: 0
+  lines:
+  - words: magic missile!
+    playerConstraint: -1
 --- !u!1 &1582897485
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,6 +443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 100
+  healthLeft: 0
   spawnPoint: {fileID: 1988317449}
   members: []
   inProgressSpells: []

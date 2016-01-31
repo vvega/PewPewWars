@@ -12,6 +12,9 @@ public class Player : MonoBehaviour {
     public Vector3 targetLocation;
     private int remainingHealth;
 
+    [Header("Sounds")]
+    public AudioClip[] death;
+
     [Header("Templates")]
     public GameObject deadTemplate;
 
@@ -20,7 +23,7 @@ public class Player : MonoBehaviour {
         remainingHealth = startingHealth;
 	}
 
-    void DealDamage(int damage)
+    public void DealDamage(int damage)
     {
         remainingHealth = Mathf.Max(remainingHealth - damage, 0);
         if (remainingHealth == 0)
@@ -33,6 +36,7 @@ public class Player : MonoBehaviour {
     void Die()
     {
         gameObject.SetActive(false);
+        AudioSource.PlayClipAtPoint(death[Random.Range(0, death.Length)], Vector3.zero);
 
         Instantiate(deadTemplate).transform.position = transform.position;
         Invoke("Respawn", 10.0f);

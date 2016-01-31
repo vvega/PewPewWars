@@ -13,7 +13,7 @@ public class Zot : ChatCommand {
         if (parameters.Length == 0)
         {
             Team otherTeam = gameMaster.GetOpposingTeam(playerObj.GetComponent<Player>().team);
-            otherTeam.DealDamage(damage);
+            otherTeam.TakeDamage(damage);
 
             CreateZot(playerObj, otherTeam.gameObject);
         }
@@ -23,6 +23,7 @@ public class Zot : ChatCommand {
             if (target != null)
             {
                 CreateZot(playerObj, target);
+                target.GetComponent<Player>().DealDamage(damage);
             }
         }
     }
