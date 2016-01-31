@@ -27,6 +27,7 @@ GameObject:
   - 4: {fileID: 431490}
   - 212: {fileID: 21250302}
   - 114: {fileID: 11422152}
+  - 95: {fileID: 9509934}
   m_Layer: 0
   m_Name: Wizard
   m_TagString: Untagged
@@ -85,6 +86,23 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!95 &9509934
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 128354}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 697ef124aa624424e868e5c8ebebd0d5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!102 &10220960
 TextMesh:
   serializedVersion: 3
@@ -117,7 +135,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e12fd21f2244641a4b3fc5b4f7279916, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingHealth: 3
+  username: 
   team: {fileID: 0}
+  walkSpeed: 0.1
+  targetLocation: {x: 0, y: 0, z: 0}
 --- !u!212 &21250302
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -154,7 +176,19 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: startingHealth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 697ef124aa624424e868e5c8ebebd0d5, type: 2}
+    - target: {fileID: 0}
+      propertyPath: walkSpeed
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 128354}

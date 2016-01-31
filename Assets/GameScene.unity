@@ -85,6 +85,33 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &156124368
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 156124369}
+  m_Layer: 0
+  m_Name: Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &156124369
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 156124368}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.2, y: -0.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 708840194}
+  m_RootOrder: 0
 --- !u!1 &708840192
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,7 +168,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 156124369}
   m_Father: {fileID: 0}
   m_RootOrder: 3
 --- !u!114 &708840195
@@ -155,8 +183,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2315854631de471c9565e3c73f8031c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  members: []
   startingHealth: 100
+  spawnPoint: {fileID: 156124369}
+  members: []
 --- !u!1 &1275180018
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,7 +408,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1988317449}
   m_Father: {fileID: 0}
   m_RootOrder: 2
 --- !u!114 &1582897488
@@ -393,8 +423,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2315854631de471c9565e3c73f8031c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  members: []
   startingHealth: 100
+  spawnPoint: {fileID: 1988317449}
+  members: []
+--- !u!1 &1988317448
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1988317449}
+  m_Layer: 0
+  m_Name: Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1988317449
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1988317448}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.2, y: -0.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1582897487}
+  m_RootOrder: 0
 --- !u!1 &2021787503
 GameObject:
   m_ObjectHideFlags: 0

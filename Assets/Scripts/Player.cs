@@ -1,15 +1,19 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class Player : MonoBehaviour {
+    [Header("Wizardly Params")]
     public int startingHealth;
-    private int remainingHealth;
+    public float walkSpeed;
 
-	public string username;
+    [Header("In-Game Vars")]
+    public string username;
 	public Team team;
 
-	// Use this for initialization
-	void Start () {
+    public Vector3 targetLocation;
+    private int remainingHealth;
+
+    // Use this for initialization
+    void Start () {
         remainingHealth = startingHealth;
 	}
 
@@ -30,4 +34,37 @@ public class Player : MonoBehaviour {
 	public Team getTeam() {
 		return team;
 	}
+
+    void Update()
+    {
+        int currentDirection = GetWalkDirection();
+        if (Vector3.Distance(transform.position, targetLocation) > 0.001f)
+        {
+            Vector3 direction = (targetLocation - transform.position).normalized;
+            transform.position += direction * Time.deltaTime * walkSpeed;
+
+            if (currentDirection != 1 && direction.y < 0)
+                SetWalkDirection(1);
+            else if (currentDirection != 2 && direction.x > 0)
+                SetWalkDirection(2);
+            else if (currentDirection != 3 && direction.y > 0)
+                SetWalkDirection(3);
+            else
+                SetWalkDirection(4);
+        }
+        else if (currentDirection != 0)
+        {
+            SetWalkDirection(0);
+        }
+    }
+
+    int GetWalkDirection()
+    {
+        return GetComponent<Animator>().GetInteger("walkDirection");
+    }
+
+    void SetWalkDirection(int dir)
+    {
+        GetComponent<Animator>().SetInteger("walkDirection", dir);
+    }
 }
