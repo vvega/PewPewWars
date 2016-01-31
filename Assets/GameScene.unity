@@ -424,6 +424,9 @@ GameObject:
   - 114: {fileID: 1275180024}
   - 114: {fileID: 1275180023}
   - 114: {fileID: 1275180025}
+  - 114: {fileID: 1275180027}
+  - 114: {fileID: 1275180026}
+  - 114: {fileID: 1275180028}
   m_Layer: 0
   m_Name: Chat Reader
   m_TagString: Untagged
@@ -592,6 +595,73 @@ MonoBehaviour:
   timeToCast: 0
   lines:
   - words: magic missile!
+    playerConstraint: -1
+--- !u!114 &1275180026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1275180018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cc513bdabf2af244a79822dfc874d5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spellName: BloodMagic
+  damage: 12
+  timeToCast: 0
+  lines:
+  - words: blood
+    playerConstraint: -1
+  - words: for
+    playerConstraint: 0
+  - words: THE
+    playerConstraint: -1
+  - words: BLOOD
+    playerConstraint: 2
+  - words: GOD
+    playerConstraint: 2
+--- !u!114 &1275180027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1275180018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 106020b1ff47a48478d4eef60b222eef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spellName: AcidCone
+  damage: 3
+  timeToCast: 0
+  lines:
+  - words: butts
+    playerConstraint: -1
+  - words: butts
+    playerConstraint: -1
+  - words: butts
+    playerConstraint: -1
+--- !u!114 &1275180028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1275180018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0010086c3fd94b24aa11f978ae373c67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spellName: Drain
+  damage: 5
+  timeToCast: 0
+  lines:
+  - words: I want
+    playerConstraint: -1
+  - words: to suck
+    playerConstraint: -1
+  - words: your blood
     playerConstraint: -1
 --- !u!1 &1582897485
 GameObject:
