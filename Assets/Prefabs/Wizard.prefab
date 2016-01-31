@@ -140,6 +140,10 @@ MonoBehaviour:
   username: 
   team: {fileID: 0}
   targetLocation: {x: 0, y: 0, z: 0}
+  death:
+  - {fileID: 8300000, guid: a550d5c8a51cde84fa47f4c95c7ea2e4, type: 3}
+  - {fileID: 8300000, guid: bbfd1fb0b6ca8b740b3eb1a185451ef5, type: 3}
+  - {fileID: 8300000, guid: c1266c2c25362cd4dbfcc83674362af5, type: 3}
   deadTemplate: {fileID: 154598, guid: 5e60ecfa1324b7e4a9c04db725c12c6e, type: 2}
 --- !u!212 &21250302
 SpriteRenderer:
@@ -179,6 +183,10 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: death.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: startingHealth
       value: 3
       objectReference: {fileID: 0}
@@ -194,6 +202,10 @@ Prefab:
       propertyPath: deadTemplate
       value: 
       objectReference: {fileID: 154598, guid: 5e60ecfa1324b7e4a9c04db725c12c6e, type: 2}
+    - target: {fileID: 0}
+      propertyPath: death.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: a550d5c8a51cde84fa47f4c95c7ea2e4, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 128354}
