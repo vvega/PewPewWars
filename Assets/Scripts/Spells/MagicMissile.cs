@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 public class MagicMissile : Spell {
-	public float timeVisible;
+	// public float timeVisible;
 
 	[Header("Templates")]
 	public GameObject castTemplate;

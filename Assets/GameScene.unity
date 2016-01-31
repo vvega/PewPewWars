@@ -831,7 +831,6 @@ MonoBehaviour:
   lines:
   - words: magic missile!
     playerConstraint: -1
-  timeVisible: 0.25
   castTemplate: {fileID: 169360, guid: 4a32be679b5c38742973451362bd7e99, type: 2}
 --- !u!114 &1275180026
 MonoBehaviour:
@@ -856,8 +855,9 @@ MonoBehaviour:
     playerConstraint: -1
   - words: BLOOD
     playerConstraint: 2
-  - words: GOD
+  - words: DOG
     playerConstraint: 2
+  castTemplate: {fileID: 128202, guid: f98b419fec97a7048a82c1e0ab8967c0, type: 2}
 --- !u!114 &1275180027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -879,6 +879,7 @@ MonoBehaviour:
     playerConstraint: -1
   - words: butts
     playerConstraint: -1
+  castTemplate: {fileID: 179298, guid: 2d758e1a810978646b1ade527ad87217, type: 2}
 --- !u!114 &1275180028
 MonoBehaviour:
   m_ObjectHideFlags: 0
