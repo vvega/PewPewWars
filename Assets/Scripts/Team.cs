@@ -8,6 +8,7 @@ public class Team : MonoBehaviour {
     public Transform spawnPoint;
     public List<string> members = new List<string>();
 	public List<SpellProgress> inProgressSpells = new List<SpellProgress>();
+	public HealthBar healthBar;
 
 	void Start()
     {
@@ -37,8 +38,10 @@ public class Team : MonoBehaviour {
 
     public void TakeDamage(int damage) {
         healthLeft = Mathf.Max(healthLeft - damage, 0);
+		healthBar.updatePercentage(healthLeft, startingHealth);
         if (healthLeft == 0) {
             // TODO: This team LOSES, other team WINS
+			healthBar.reset();
         }
     }
 }
