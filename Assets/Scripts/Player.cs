@@ -33,6 +33,9 @@ public class Player : MonoBehaviour {
 
     public void DealDamage(int damage)
     {
+        if (gameObject.activeSelf == false)
+            return;
+
         remainingHealth = Mathf.Max(remainingHealth - damage, 0);
         if (remainingHealth == 0)
         {
@@ -54,6 +57,8 @@ public class Player : MonoBehaviour {
 
     void Respawn()
     {
+        remainingHealth = startingHealth;
+
         gameObject.SetActive(true);
         transform.position = team.spawnPoint.position;
 
