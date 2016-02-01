@@ -54,6 +54,7 @@ public class Player : MonoBehaviour {
 
     void Respawn()
     {
+		remainingHealth = startingHealth;
         gameObject.SetActive(true);
         transform.position = team.spawnPoint.position;
 
