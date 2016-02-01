@@ -29,6 +29,11 @@ public class Incant : ChatCommand {
             if (s.SpellComplete()) {
 				s.spell.Cast(team, gameMaster.GetOpposingTeam(team));
                 team.inProgressSpells.Remove(s);
+
+                string castingGroup = s.casterNames[0];
+                for (int j = 1; j < s.casterNames.Length; ++j)
+                    castingGroup += ", " + s.casterNames[j];
+                gameMaster.GetComponent<TwitchIRC>().MessageChannel(s.spell.spellName + " has been cast by " + castingGroup);
             }
 
             return;

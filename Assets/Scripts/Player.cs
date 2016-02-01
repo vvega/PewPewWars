@@ -48,12 +48,16 @@ public class Player : MonoBehaviour {
 
         Instantiate(deadTemplate).transform.position = transform.position;
         Invoke("Respawn", 10.0f);
+
+        GameObject.Find("Chat Reader").GetComponent<TwitchIRC>().MessageChannel(username + " has died!");
     }
 
     void Respawn()
     {
         gameObject.SetActive(true);
         transform.position = team.spawnPoint.position;
+
+        GameObject.Find("Chat Reader").GetComponent<TwitchIRC>().MessageChannel(username + " has returned!");
     }
 
     public void setTeam(Team team) {

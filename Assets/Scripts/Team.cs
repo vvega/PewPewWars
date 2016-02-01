@@ -54,6 +54,7 @@ public class Team : MonoBehaviour {
 			otherTeamNumWins++;
 			otherTeamWinLabel.text = otherTeamNumWins + " " + (otherTeamNumWins == 1 ? "win" : "wins");
 			healthBar.reset();
+            healthLeft = startingHealth;
         }
     }
 }
