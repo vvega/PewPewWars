@@ -631,6 +631,7 @@ GameObject:
   - 4: {fileID: 1275180020}
   - 114: {fileID: 1275180019}
   - 114: {fileID: 1275180021}
+  - 114: {fileID: 1275180030}
   - 114: {fileID: 1275180022}
   - 114: {fileID: 1275180024}
   - 114: {fileID: 1275180023}
@@ -926,6 +927,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiMessage: {fileID: 1138948829}
+--- !u!114 &1275180030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1275180018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ba6a64defbd05241bf5060b7d22cb71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Command: '!credits'
 --- !u!1 &1421706477
 GameObject:
   m_ObjectHideFlags: 0
