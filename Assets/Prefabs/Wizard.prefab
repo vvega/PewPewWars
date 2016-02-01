@@ -112,7 +112,7 @@ TextMesh:
   m_GameObject: {fileID: 127578}
   m_Text: Name
   m_OffsetZ: 0
-  m_CharacterSize: 0.05
+  m_CharacterSize: 0.03
   m_LineSpacing: 1
   m_Anchor: 1
   m_Alignment: 1
@@ -137,6 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 3
   walkSpeed: 0.1
+  wanderTime: 5
   username: 
   team: {fileID: 0}
   targetLocation: {x: 0, y: 0, z: 0}
@@ -214,6 +215,14 @@ Prefab:
       propertyPath: death.Array.data[2]
       value: 
       objectReference: {fileID: 8300000, guid: c1266c2c25362cd4dbfcc83674362af5, type: 3}
+    - target: {fileID: 0}
+      propertyPath: wanderTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_CharacterSize
+      value: 0.03
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 128354}

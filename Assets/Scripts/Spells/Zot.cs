@@ -10,6 +10,12 @@ public class Zot : ChatCommand {
     public override void ProcessCommand(GameMaster gameMaster, string username, string parameters)
     {
         GameObject playerObj = gameMaster.GetPlayerObject(username);
+        if (playerObj.activeSelf == false)
+        {
+            GetComponent<TwitchIRC>().MessageChannel("@" + username + ", can't cast spells when you're dead");
+            return;
+        }
+
         if (parameters.Length == 0)
         {
             Team otherTeam = gameMaster.GetOpposingTeam(playerObj.GetComponent<Player>().team);

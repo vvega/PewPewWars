@@ -814,6 +814,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Command: '!cast'
+  insults:
+  - '* ruined it'
+  - '* screwed the pooch'
+  - '* done goofed'
+  - '* messed eveything up with their stupid mouth-hole'
+  - '* burned down the apothecary'
+  - '* should go back to being a peasant'
+  - '*. Really?'
+  - '* never graduated wizard school'
+  - '* caught the illiteracy'
+  - '* let us all down'
+  - '* thought that was a spell... it wasn''t'
 --- !u!114 &1275180025
 MonoBehaviour:
   m_ObjectHideFlags: 0

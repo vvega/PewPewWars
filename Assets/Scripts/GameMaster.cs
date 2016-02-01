@@ -21,9 +21,6 @@ public class GameMaster : MonoBehaviour {
 		player.username = username;
         player.setTeam(newPlayerTeam);
 
-        newUser.transform.FindChild("Username").GetComponent<TextMesh>().text = username;
-		newPlayerTeam.PlaceMember(newUser);
-
         userObjectDict.Add(username, newUser);
     }
 

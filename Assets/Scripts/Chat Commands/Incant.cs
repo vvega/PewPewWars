@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 
 public class Incant : ChatCommand {
+    public string[] insults;
 
     public override void ProcessCommand(GameMaster gameMaster, string username, string parameters)
 	{
@@ -9,7 +10,13 @@ public class Incant : ChatCommand {
 		if (playerObj == null)
 			return;
 
-		Player playerComponent = playerObj.GetComponent<Player>();
+        if (playerObj.activeSelf == false)
+        {
+            GetComponent<TwitchIRC>().MessageChannel(username + ", can't cast spells when you're dead");
+            return;
+        }
+
+        Player playerComponent = playerObj.GetComponent<Player>();
 		Team team = playerComponent.getTeam();
 
         // Check in-progress spells
@@ -43,7 +50,10 @@ public class Incant : ChatCommand {
             	team.inProgressSpells.Add(newSpellProgress);
 			}
 
-            break;
+            return;
         }
-	}
+
+        string insult = insults[Random.Range(0, insults.Length)].Replace("*", username);
+        GetComponent<TwitchIRC>().MessageChannel(insult);
+    }
 }
